@@ -1,0 +1,30 @@
+---
+- name: Web server provision
+  hosts: webservers
+
+  tasks:
+    - name: Update repositories
+      ansible.builtin.apt:
+        update_cache: 'yes'
+
+    - name: Install Apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+
+    - name: Install PHP
+      ansible.builtin.apt:
+        name: php
+        state: present
+
+    - name: installing git
+      ansible.builtin.apt:
+        name: git
+        state: present
+
+    - name: Start Apache2
+      ansible.builtin.service:
+        name: apache2
+        state: started
+        enabled: 'yes'
+...
