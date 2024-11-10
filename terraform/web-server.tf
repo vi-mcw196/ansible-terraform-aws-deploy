@@ -32,7 +32,7 @@ resource "terraform_data" "ssh_connection" {
   connection {
     type        = "ssh"
     user        = "ubuntu"
-    private_key = file(pathexpand(".ssh/labsuser.pem"))
+    private_key = file(pathexpand("~/.ssh/labsuser.pem"))
     host        = aws_instance.web_server.public_ip
   }
 }

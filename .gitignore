@@ -2,6 +2,10 @@
 
 .terraform/
 
+.terraform.*
+
+terraform.tfstate*
+
 # Compiled class file
 *.class
 
